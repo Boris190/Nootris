@@ -1,0 +1,192 @@
+@import "../../styles";
+
+.Header {
+    width: 100%;
+    height: fit-content;
+    background-color: #111111;
+    position: fixed;
+    z-index: 55;
+    top: 0;
+    transition: 0.5s ease all;
+
+    &-Active {
+        height: 100%;
+
+        .Header-Link_wrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            margin-top: 20px;
+
+            > .Header-Link {
+                display: block;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    input[type="checkbox"]:checked .Header {
+        height: 100%;
+    }
+
+    &-Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 80px 24px 64px;
+    }
+
+    &-Link {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+
+        @include note {
+            font-size: 15px;
+            line-height: 21px;
+        }
+
+        @include ipad {
+            display: none;
+        }
+
+        &:not(:last-child) {
+            margin-right: 40px;
+
+            @include note {
+                margin-right: 20px;
+            }
+        }
+
+        > a {
+            color: inherit;
+            position: relative;
+            transition: 0.3s ease all;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                transition: 0.3s ease all;
+                bottom: 0;
+                background-color: #fcb500;
+                width: 0;
+                height: 2px;
+            }
+
+            &:hover {
+                color: #fcb500;
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        &_wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &-Hamburger {
+        height: 26px;
+        width: 32px;
+        position: absolute;
+        right: 25px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        color: white;
+        display: none;
+
+        @include ipad {
+            display: flex;
+        }
+
+        .line {
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .line1 {
+            transform-origin: 0% 0%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .line2 {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .line3 {
+            transform-origin: 0% 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        input[type="checkbox"]:checked ~ .line1 {
+            transform: rotate(45deg);
+        }
+
+        input[type="checkbox"]:checked ~ .line2 {
+            transform: scaleY(0);
+        }
+
+        input[type="checkbox"]:checked ~ .line3 {
+            transform: rotate(-45deg);
+        }
+
+        .checkbox {
+            position: absolute;
+            display: block;
+            height: 32px;
+            width: 32px;
+            opacity: 0;
+            left: -10px;
+            cursor: pointer;
+        }
+    }
+
+    &-Favorite {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @include ipad {
+            display: none;
+        }
+
+        img {
+            width: 32px;
+            height: 28px;
+        }
+
+        &_count {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background-color: #fcb500;
+            width: 16px;
+            height: 16px;
+
+            span {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                font-size: 12px;
+                line-height: 18px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

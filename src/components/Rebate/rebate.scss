@@ -1,0 +1,173 @@
+@import "../../styles/";
+
+.Rebate {
+    width: 100%;
+    height: fit-content;
+
+    &-Body {
+        width: 100%;
+        height: 100%;
+        margin-top: 112px;
+
+        @include ipad {
+            margin-top: 60px;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 57px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+
+            @include ipad {
+                font-size: 32px;
+                line-height: 44px;
+            }
+
+            @include phone {
+                font-size: 22px;
+                line-height: 32px;
+            }
+
+            > span {
+                color: #fcb500;
+            }
+        }
+    }
+
+    &-Sallary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &_discounted {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 43px;
+            text-decoration: line-through;
+            color: #adadad;
+
+            @include ipad {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        &_count {
+            font-size: 48px;
+            line-height: 57px;
+            color: #ffffff;
+            padding-left: 32px;
+
+            @include ipad {
+                font-size: 32px;
+                line-height: 38px;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    &-ItemTitle {
+        font-weight: 400;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        font-size: 36px;
+        line-height: 43px;
+        margin: 45px 0 0;
+
+        @include phone {
+            margin: 20px 0 0;
+        }
+
+        > span {
+            color: #fcb500;
+        }
+    }
+
+    &-Items {
+        width: 100%;
+        max-width: calc(100% - 350px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px auto 64px;
+
+        @include note {
+            max-width: calc(100% - 200px);
+        }
+
+        @include phone {
+            flex-direction: column;
+        }
+
+        > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @include phone {
+                &:not(:first-child) {
+                    margin-top: 50px;
+                }
+            }
+
+            &:nth-child(even) {
+                span {
+                    > span {
+                        font-size: 24px;
+                        line-height: 28px;
+
+                        @include ipad {
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(odd) {
+                > span {
+                    font-size: 18px;
+                    line-height: 21px;
+
+                    @include ipad {
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+                }
+            }
+
+            > img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-Order {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 80px auto 112px;
+    }
+
+    &-Button {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        background: #fcb500;
+        border-radius: 7px;
+        max-width: 256px;
+        border: none;
+        width: 100%;
+        padding: 16px 0;
+        transition: 0.5s ease all;
+
+        &:hover {
+            background: #fcb500ab;
+        }
+    }
+}

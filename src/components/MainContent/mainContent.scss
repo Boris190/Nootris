@@ -1,0 +1,138 @@
+@import "../../styles";
+.MainContent {
+    width: 100%;
+    height: 100%;
+    margin-top: 65px;
+
+    &-About {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        position: relative;
+
+        > h1 {
+            font-weight: 700;
+            font-size: 144px;
+            line-height: 152px;
+            z-index: 10;
+            margin: 90px 0 24px;
+            color: white;
+            max-width: 1000px;
+
+            @include not {
+                font-size: 120px;
+                line-height: 133px;
+            }
+
+            @include note {
+                font-size: 90px;
+                line-height: 90px;
+            }
+
+            @include ipad {
+                text-align: center;
+                font-size: 64px;
+                line-height: 70px;
+            }
+        }
+
+        > h4 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            color: #000000;
+            margin: 0;
+
+            @include ipad {
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+        span {
+            font-weight: 400;
+            color: #000000;
+            display: inline-block;
+
+            @include ipad {
+                font-size: 18px;
+                line-height: 24px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            &:first-of-type {
+                max-width: 672px;
+                font-size: 24px;
+                line-height: 28px;
+                padding-bottom: 120px;
+
+                @include note {
+                    font-size: 20px;
+                    line-height: 24px;
+                    max-width: 500px;
+                    padding-bottom: 80px;
+                }
+
+                @include ipad {
+                    padding-bottom: 25px;
+                }
+            }
+
+            &:last-of-type {
+                max-width: 416px;
+                font-size: 18px;
+                line-height: 21px;
+                padding-top: 16px;
+            }
+        }
+    }
+
+    &-Image {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @include ipad {
+            position: static;
+        }
+
+        > img {
+            @include note {
+                top: 10%;
+                max-width: 650px;
+            }
+
+            @include ipad {
+                max-width: 450px;
+            }
+
+            @include phone {
+                max-width: 300px;
+            }
+        }
+    }
+
+    &-Body {
+        background-size: cover;
+        background-image: url("../../assets/main.png");
+        min-height: 800px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 64px;
+
+        @include ipad {
+            padding: 0 32px;
+            flex-direction: column;
+        }
+
+        @include phone {
+            padding: 0 10px 112px;
+        }
+    }
+}
